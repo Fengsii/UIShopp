@@ -1,0 +1,34 @@
+CREATE OR REPLACE DATABASE perpustakaan_pasim;
+USE perpustakaan_pasim;
+
+CREATE OR REPLACE TABLE koleksi(
+	id 		INT PRIMARY KEY,
+	nama_koleksi	VARCHAR(50) NOT NULL
+);
+
+CREATE OR REPLACE TABLE rak (
+	id 		INT AUTO_INCREMENT PRIMARY KEY,
+	nama_rak	VARCHAR(50)
+);
+
+CREATE OR REPLACE TABLE buku (
+	id 		INT AUTO_INCREMENT PRIMARY KEY,
+	judul		VARCHAR(50) NOT NULL,
+	penulis		VARCHAR(50),
+	tahun_terbit	INT,
+	stok		INT,
+	id_koleksi 	INT,
+	id_rak		INT,
+	FOREIGN KEY (id_koleksi) REFERENCES koleksi (id) ON DELETE CASCADE,
+	FOREIGN KEY (id_rak) REFERENCES rak (id)
+);
+
+CREATE OR REPLACE TABLE pengunjung (
+	id 		INT AUTO_INCREMENT PRIMARY KEY,
+	nama		VARCHAR(50) NOT NULL,
+	jenis_kelamin	VARCHAR(50),
+	program_studi	VARCHAR(50),
+	kebutuhan	VARCHAR(50),
+	tanggal		DATE
+);
+

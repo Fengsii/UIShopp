@@ -1,0 +1,255 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{78D82B4A-C21C-4E7F-83BF-17196E0D9FEA}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>UIShopp</RootNamespace>
+    <AssemblyName>UIShopp</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.Bcl.AsyncInterfaces, Version=8.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Bcl.AsyncInterfaces.8.0.0\lib\net462\Microsoft.Bcl.AsyncInterfaces.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.DependencyInjection.Abstractions, Version=8.0.0.2, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Extensions.DependencyInjection.Abstractions.8.0.2\lib\net462\Microsoft.Extensions.DependencyInjection.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.Logging.Abstractions, Version=8.0.0.2, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Extensions.Logging.Abstractions.8.0.2\lib\net462\Microsoft.Extensions.Logging.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="MySqlConnector, Version=2.0.0.0, Culture=neutral, PublicKeyToken=d33d3e53aa5f8c92, processorArchitecture=MSIL">
+      <HintPath>..\packages\MySqlConnector.2.4.0-beta.2\lib\net471\MySqlConnector.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Buffers, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Buffers.4.5.1\lib\net461\System.Buffers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Core" />
+    <Reference Include="System.Diagnostics.DiagnosticSource, Version=8.0.0.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Diagnostics.DiagnosticSource.8.0.1\lib\net462\System.Diagnostics.DiagnosticSource.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Memory, Version=4.0.1.2, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Memory.4.5.5\lib\net461\System.Memory.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Numerics" />
+    <Reference Include="System.Numerics.Vectors, Version=4.1.4.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Numerics.Vectors.4.5.0\lib\net46\System.Numerics.Vectors.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.CompilerServices.Unsafe, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Runtime.CompilerServices.Unsafe.6.0.0\lib\net461\System.Runtime.CompilerServices.Unsafe.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Threading.Tasks.Extensions, Version=4.2.0.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Threading.Tasks.Extensions.4.5.4\lib\net461\System.Threading.Tasks.Extensions.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Transactions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Controller\PerpustakaanController.cs" />
+    <Compile Include="Model\Connection.cs" />
+    <Compile Include="View\AddBuku.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\AddBuku.Designer.cs">
+      <DependentUpon>AddBuku.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\AddKoleksi.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\AddKoleksi.Designer.cs">
+      <DependentUpon>AddKoleksi.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\AddPengunjung.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\AddPengunjung.Designer.cs">
+      <DependentUpon>AddPengunjung.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\AddRak.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\AddRak.Designer.cs">
+      <DependentUpon>AddRak.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Buku.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="View\Buku.Designer.cs">
+      <DependentUpon>Buku.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Form1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Form1.Designer.cs">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Koleksi.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="View\Koleksi.Designer.cs">
+      <DependentUpon>Koleksi.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\KoleksiDhash.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="View\KoleksiDhash.Designer.cs">
+      <DependentUpon>KoleksiDhash.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="View\Pengunjung.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="View\Pengunjung.Designer.cs">
+      <DependentUpon>Pengunjung.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Rak.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="View\Rak.Designer.cs">
+      <DependentUpon>Rak.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\UpdateBuku.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\UpdateBuku.Designer.cs">
+      <DependentUpon>UpdateBuku.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\UpdateKoleksi.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\UpdateKoleksi.Designer.cs">
+      <DependentUpon>UpdateKoleksi.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\UpdatePengunjung.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\UpdatePengunjung.Designer.cs">
+      <DependentUpon>UpdatePengunjung.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\UpdateRak.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\UpdateRak.Designer.cs">
+      <DependentUpon>UpdateRak.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="View\AddBuku.resx">
+      <DependentUpon>AddBuku.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\AddKoleksi.resx">
+      <DependentUpon>AddKoleksi.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\AddPengunjung.resx">
+      <DependentUpon>AddPengunjung.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\AddRak.resx">
+      <DependentUpon>AddRak.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Buku.resx">
+      <DependentUpon>Buku.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Form1.resx">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Koleksi.resx">
+      <DependentUpon>Koleksi.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\KoleksiDhash.resx">
+      <DependentUpon>KoleksiDhash.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <EmbeddedResource Include="View\Pengunjung.resx">
+      <DependentUpon>Pengunjung.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Rak.resx">
+      <DependentUpon>Rak.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\UpdateBuku.resx">
+      <DependentUpon>UpdateBuku.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\UpdateKoleksi.resx">
+      <DependentUpon>UpdateKoleksi.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\UpdatePengunjung.resx">
+      <DependentUpon>UpdatePengunjung.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\UpdateRak.resx">
+      <DependentUpon>UpdateRak.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\buku.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icon-silang-close-removebg-preview.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icon-silang-close.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icon-silang-close1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\buku3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ppus.jpeg" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
